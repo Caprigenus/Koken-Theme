@@ -1,0 +1,32 @@
+<koken:include file="header.incl" />
+<koken:load infinite="true">
+	<section id="pillar">
+		<koken:loop>
+			<koken:event>
+				<koken:event_content>
+					<div data-id="{{ content.id }}" class="pillar-item small-border relative" style="background-color:rgb({{ content.caprigenus_background_color }});color:rgb({{ content.caprigenus_foreground_color }});">
+						<p class="created">{{ content.captured_on date_format="d.m.Y" }}</p>
+						<koken:img class="{{ content.file_type }}" lazy="true" fade="300" />
+						<div class="content-description">
+							<ol>
+								<koken:tags>
+									<koken:loop separator="">
+										<li class="tag"><koken:link to="tag" title="Alle Bilder in {{ tag.title case='title' }}">{{ tag.title case="title" }}</koken:link></li>
+									</koken:loop>
+								</koken:tags>
+							</ol>
+						</div>
+					</div>
+				</koken:event_content>
+			</koken:event>
+		</koken:loop>
+	</section>
+	<section id="slideshow">
+		<koken:pulse autostart="false" jsvar="pulse_slideshow" />
+	</section>
+	<script>
+		// Workaround, Slideshow does not work in Tags.
+		$(function() {$('.pillar-item').unbind( "click" );});
+	</script>
+</koken:load>
+<koken:include file="footer.incl" />

@@ -1,0 +1,47 @@
+.essays {
+	width: 70%;
+	float: left;
+	margin: 1em 0 0;
+	padding: 1em;
+}
+
+.essay {
+	margin: 0 0 1em;
+	font-size: 1.3em
+}
+
+.essay:last-of-type {
+	padding-bottom: 2em;
+}
+
+.essays-side {
+	width: 25%;
+	position: relative;
+	float: left;
+}
+
+.essays-inside {
+	margin: 1em 0 0;
+	padding: 1em;
+}
+
+.essays-titles {
+	padding: 2em 0 0 1em;;
+}
+
+.essays-titles li {
+	margin: 0 0 0.75em;
+}
+
+select.k-select {
+	color: #222;
+	background-color: #eee;
+	border: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-image: linear-gradient(45deg, transparent 50%, #222 50%), linear-gradient(135deg, #222 50%, transparent 50%);
+	background-position: calc(100% - 1em) 0.5em, calc(100% - 0.5em) 0.5em;
+	background-size: 0.5em 0.5em, 0.5em 0.5em;
+	background-repeat: no-repeat;
+}

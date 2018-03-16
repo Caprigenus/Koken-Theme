@@ -1,0 +1,111 @@
+<koken:include file="header.incl" />
+<koken:head>
+<script>
+	window.onload = function() {
+		setTimeout(function() {
+			$K.infinity.resume();
+		}, 500);
+		$(window).on('k-infinite-loading', function() {	
+			$('#infinite_load_msg').show();
+		});
+		$(window).on('k-infinite-loaded', function() {
+			$('#infinite_load_msg').hide();
+		});
+	};
+</script>
+</koken:head>
+	<koken:load limit="12" infinite="true">
+		<ol class="list">
+			<koken:loop>
+				<li>
+					<div class="event-inner">
+						<koken:event>
+							<koken:event_album>
+								<koken:if data="album.album_type" equals="standard">
+									<koken:link>
+										<p>{{ album.published_on date_format="j.n.Y" }}</p>
+										<h3 class="timeline-title">{{ album.title }}</h3>
+										<koken:covers minimum="3" limit="3">
+											<div>
+												<koken:loop>
+													<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
+												</koken:loop>
+											</div>
+										</koken:covers>
+										<p class="timeline-summary">{{ album.summary }}</p>
+									</koken:link>
+								</koken:if>
+							</koken:event_album>
+							<koken:event_album_update>
+								<koken:if data="album.album_type" equals="standard">
+									<koken:link>
+										<p>{{ album.published_on date_format="j.n.Y" }}</p>
+										<h3 class="timeline-title">{{ content.length }} neue Bilder in {{ album.title }}</h3>
+										<koken:if condition="{{ content.length }} == 1">
+											<koken:loop>
+												<koken:img class="timeline-img-one" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
+											</koken:loop>
+										<koken:else>
+											<koken:if condition="{{ content.length }} == 2">
+												<koken:loop limit="2">
+													<koken:img class="timeline-img-two" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
+												</koken:loop>
+											<koken:else>
+												<koken:if condition="{{ content.length }} <= 3">
+													<koken:loop limit="3">
+														<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
+													</koken:loop>
+												<koken:else>
+													<koken:if condition="{{ content.length }} <= 5">
+														<koken:loop limit="5">
+															<koken:if condition="{{ index }} < 3">													
+																<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
+															<koken:else>
+																<koken:img class="timeline-img-two" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
+															</koken:if>
+														</koken:loop>
+													<koken:else>
+														<koken:loop limit="6">
+															<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
+														</koken:loop>
+													</koken:if>
+												</koken:if>
+											</koken:if>
+										</koken:if>
+									</koken:link>
+								</koken:if>
+							</koken:event_album_update>
+							<koken:event_content>
+								<p>{{ content.published_on date_format="j.n.Y" }}</p>
+								<h3 class="timeline-title">{{ content.title | content.filename }}</h3>
+								<koken:content_image>
+									<koken:link lightbox="true">
+										<koken:img fade="300" />
+									</koken:link>
+								</koken:content_image>
+								<koken:content_video>
+									<koken:video />
+								</koken:content_video>
+							</koken:event_content>
+							<koken:event_essay>
+								<koken:link>
+									<p>{{ essay.published_on date_format="j.n.Y" }}</p>
+									<h3 class="timeline-title">{{ essay.title }}</h3> 
+									<koken:featured_image>
+										<koken:img class="timeline-img-one" />
+									</koken:featured_image>
+									<p class="timeline-summary">{{ essay.excerpt }}</p>
+								</koken:link>
+							</koken:event_essay>
+						</koken:event>
+					</div>
+				</li>
+			</koken:loop>
+		</ol>
+	<koken:else>
+		<koken:note>
+			No timeline data found.
+		</koken:note>
+	</koken:load>
+	<i id="infinite_load_msg" class="icon-hour-glass"></i>
+<koken:include file="footer.incl" />

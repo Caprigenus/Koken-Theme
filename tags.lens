@@ -1,0 +1,11 @@
+<koken:include file="header.incl" />
+<koken:load limit="100" order_by="content_count" order_direction="asc">
+	<ol class="head-tags">
+		<koken:loop>
+			<koken:if condition="{{ tag.counts.total }} > 3">
+				<li class="tag"><koken:link title="Alle Bilder in {{ tag.title case='title' }}">{{ tag.title case="title" }}</koken:link></li>
+			</koken:if>
+		</koken:loop>
+	</ol>
+</koken:load>
+<koken:include file="footer.incl" />

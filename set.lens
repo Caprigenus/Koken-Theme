@@ -1,0 +1,21 @@
+<koken:include file="header.incl" />
+<koken:load>
+	<div class="cover-margin">
+		<koken:background lazy="true" id="cover"></koken:background>
+	</div>
+	<section id="pillar">
+		<koken:loop>
+			<div class="pillar-item" style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});background-color:rgb({{ album.covers.first.caprigenus_background_color }});">
+				<koken:link>
+					<p class="created">{{ album.published_on date_format="j.n.Y" }}</p>
+					<koken:img lazy="true" />
+					<div class="album-text">
+						<h3>{{ album.title }}</h3>
+						<p>{{ album.summary }}</p>
+					</div>
+				</koken:link>
+			</div>
+		</koken:loop>
+	</section>
+</koken:load>
+<koken:include file="footer.incl" />

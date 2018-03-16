@@ -1,0 +1,21 @@
+{
+	"name": "CapriGenus Fixed Layout",
+	"description": "",
+	"version": "2.0.0",
+	"author": {
+		"name": "Christian Zügner",
+		"link": "http://caprigen.us"
+	},
+	"settings": {
+		"Timelin": {
+			"icon":"nav",
+			"settings": {
+				"album_id": {
+					"label": "Album ID",
+					"type": "number",
+					"value": 195
+				}
+			}
+		}
+	}
+}

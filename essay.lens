@@ -1,0 +1,38 @@
+<koken:include file="header.incl" />
+<div class="essays">
+	<koken:load>
+		<article class="essay">
+			<header>
+				<koken:link to="archive">
+					<p>{{ essay.published_on date_format="j.n.Y" }}</p>
+				</koken:link>
+				<h2><koken:link>{{ essay.title }}</koken:link></h2>
+			</header>
+			<div class="essay-content">{{ essay.content }}</div>
+		</artivle>
+	</koken:load>
+</div>
+<div class="essays-side">
+	<div class="essays-inside">
+		<section class="essays-selector">
+			<koken:dates limit_to="essays">
+				<koken:select />
+			</koken:dates>
+		</section>
+		<section class="essays-titles">
+			<koken:load source="essays" infinite="true">
+				<ul>
+					<koken:loop>
+						<li>
+							<koken:link>
+								<p>{{ essay.created_on date_format="d.m.Y" }}</p>
+								<h3>{{ essay.title }}</h3>
+							</koken:link>
+						</li>
+					</koken:loop>
+				</ul>
+			</koken:load>
+		</section>
+	</div>
+</div>
+<koken:include file="footer.incl" />

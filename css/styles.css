@@ -1,0 +1,278 @@
+/*
+	Syntax Checking:
+	http://csslint.net
+
+	Compress:
+	http://refresh-sf.com/yui/
+
+	https://www.smashingmagazine.com/2017/05/fluid-responsive-typography-css-poly-fluid-sizing/
+	http://www.designmadeingermany.de/2011/54591/
+	http://blog.iamsuleiman.com/techniques-to-display-text-overlay-background-images/
+	https://css-tricks.com/basics-css-blend-modes/
+	padding: calc(16px + 1.25rem - 0.25vh);
+*/
+
+/* Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,main-menu,nav,output,ruby,section,summary,time,mark,audio,video,form,input{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}
+
+/* Basics */
+
+html {
+	color: #222;
+	background-color: #eee;
+	font-family: "Fira Sans Extra Condensed", sans-serif;
+	font-weight: 300;
+}
+
+body{
+	margin: 0 auto;
+	width: 500px;
+}
+
+body.play {
+	cursor: none;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: 700;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	font-size: 112px;
+}
+
+h2 {
+	font-size: 72px;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+h4 {
+	font-size: 22px;
+}
+
+select {
+	font-size: 18px;
+	font-family: inherit;
+}
+
+audio {
+	display: none;
+	height: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Navigation */
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1100px;
+	padding: 0 8px 0.25em;
+	font-size: 18px;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	text-transform: uppercase;
+}
+
+nav a:before {
+	content: ' ';
+	height: 0.25em;
+	margin-bottom: 0.25em;
+	display: block;
+}
+
+a.k-nav-current:before {
+	background-color: #222;
+}
+
+#back-to-top {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+	background-color: rgba(238, 238, 238, 0.67);
+	color: #222;
+	width: 1.5em;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center ;
+	border-radius: 0.75em;
+	font-size: 2.5em;
+	z-index: -1;
+	opacity: 0;
+	-moz-transition: all 2s ease-in-out;
+	-webkit-transition: all 2s ease-in-out;
+	-ms-transition: all 2s ease-in-out;
+	transition: all 2s ease-in-out;
+}
+
+#back-to-top.show {
+	z-index: 105;
+	opacity: 1;
+}
+
+#cover {
+	height: 592px;
+}
+
+.cover-flex {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.cover-margin {
+	margin: 8px;
+}
+
+.cover-content {
+	padding: 2rem 10rem;
+	text-align: center;
+}
+
+.cover-content h1 {
+	margin-bottom: 0.1em;
+}
+
+.icon i {
+	font-size: 2.5em;
+	padding: 0 0.5em;
+}
+
+/* Responsive */
+
+/* Medium Screen 2 Columns */
+@media only screen and (min-width : 1020px) and (max-width : 1519px) {
+	body {
+		width: 1000px;
+	}
+
+	#cover {
+		height: 575px;
+	}
+}
+
+/* Medium Screen 3 Columns */
+@media only screen and (min-width : 1520px) and (max-width : 2019px) {
+	body {
+		width: 1500px;
+	}
+
+	#cover {
+		height: 980px;
+	}
+}
+
+/* Large Screen 4 Columns */
+@media only screen and (min-width : 2020px) {
+	body {
+		width: 2000px;
+	}
+
+	#cover {
+		height: 1200px;
+	}
+
+	h1 {
+		font-size: 196px;
+	}
+}
+
+/* iPhone SE in landscape */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
+	body {
+		width: 568px;
+	}
+}
+
+/* iPhone SE in portrait */
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+	body {
+		width: 320px;
+	}
+}
+
+/* iPhone 6,7,8 in landscape */
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
+	body {
+		width: 736px;
+	}
+}
+
+/* iPhone 6,7,8 in portrait */
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) {
+	body {
+		width: 414px;
+	}
+}
+
+/* iPad in landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) {
+	nav {
+		font-size: 21px;
+	}
+
+	#cover {
+		height: 605px;
+	}
+}
+
+/* iPad in portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2) {
+	body {
+		width: 520px;
+	}
+
+	#cover {
+		height: 300px;
+	}
+
+	nav {
+		font-size: 11px;
+	}
+
+	h1 {
+		font-size: 48px;
+	}
+}
+
+.pillar {
+	padding-top: 8px;
+}
+
+.pillar-item {
+	display: none;
+	transition: all 0.4s ease-in-out;
+	position: relative;
+}
+
+.album-text {
+	padding: 3em;
+}
+
+.album-text h3 {
+	padding-bottom: 0.5em;
+}
+
+.created {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 0 0 0.5em;
+	border-radius: 0 0 0 0.5em;
+	transition: none !important;
+	z-index: 10;
+	background-color: #eee;
+	color: #222;
+	font-size: 0.85em;
+}

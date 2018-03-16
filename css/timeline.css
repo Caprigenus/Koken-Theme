@@ -1,0 +1,63 @@
+ol.list li {
+	clear: both;
+	float: left;
+	width: 50%;
+	margin-top: -9em;
+}
+
+ol.list li:nth-of-type(odd) {
+	text-align: right;
+}
+
+ol.list li:nth-of-type(even) {
+	float: right;
+	text-align: left;
+}
+
+ol.list li:first-of-type {
+	margin-top: 0;
+}
+
+.event-inner {
+	padding: 1em;
+	margin: 1em;
+}
+
+.timeline-img-one {
+	width: 60%;
+}
+
+.timeline-img-two {
+	width: 47.6%;
+}
+
+.timeline-img-three {
+	width: 31%;
+}
+
+.cover-images {
+	padding-top: 0.5em;
+}
+
+.timeline-summary {
+	padding-top: 0.5em;
+}
+
+#infinite_load_msg {
+	display: none;
+	background-color: #222;
+	color: #eee;
+	width: 3em;
+	height: 3em;
+	border-radius: 1.5em;
+	bottom: 0.5em;
+	left: calc(50% - 1.5em);
+	font-size: 2em;
+	position: fixed;
+	text-align: center;
+	line-height: 3em;
+	-moz-transition:  all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition:  all 0.3s ease-in-out;
+	transition:  all 0.3s ease-in-out;
+}
