@@ -1,14 +1,16 @@
 <koken:include file="header.incl" />
 <koken:load>
 	<koken:if condition="({{album.id}} != 195)&&({{album.id}} != 208)">
-		<div class="cover-margin">
+		<div class="cover-margin" style="background:rgb({{ album.covers.first.caprigenus_background_color }});">
 			<koken:background lazy="true" id="cover">
-				<div class="cover-flex" style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});text-shadow: rgb({{ album.covers.first.caprigenus_background_color }}) 0 0 8px;">
-					<div class="cover-content" style="background: -webkit-linear-gradient(top, rgba({{ album.covers.first.caprigenus_background_color }}, 0), rgba({{ album.covers.first.caprigenus_background_color }}, 0.34));">
-						<h1>{{ album.title }}</h1>
-						<a id="scroll-down" class="icon" href="#pillar"><i class="icon-circle-down"></i></a>
-						<a id="play" class="icon" href="#" data-bind-to-key="space"><i class="icon-play2"></i></a>
-						<koken:album_download><koken:link class="icon"><i class="icon-download2"></i></koken:link></koken:album_download>
+				<div class="cover-content" style="background: -webkit-linear-gradient(top, rgba({{ album.covers.first.caprigenus_background_color }}, 0), rgba({{ album.covers.first.caprigenus_background_color }},0.34));">
+					<div class="cover-content-margin">
+						<div class="cover-h1"><h1 style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});text-shadow:rgb({{ album.covers.first.caprigenus_background_color }}) 0 0 8px;">{{ album.title }}</h1></div>
+						<div class="buttons">
+						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});color:rgb({{ album.covers.first.caprigenus_background_color }});"><a id="scroll-down" href="#pillar"><i class="icon-cheveron-down"></i></a></div>
+						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});color:rgb({{ album.covers.first.caprigenus_background_color }});"><a id="play" href="#" data-bind-to-key="space"><i class="icon-play"></i></a></div>
+						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});color:rgb({{ album.covers.first.caprigenus_background_color }});"><koken:album_download><koken:link><i class="icon-download"></i></koken:link></koken:album_download></div>
+						</div>
 					</div>
 				</div>
 			</koken:background>
@@ -16,28 +18,22 @@
 	</koken:if>
 	<section id="pillar">
 		<koken:loop>
-			<div data-id="{{ index }}" class="pillar-item img-border" style="background-color:rgb({{ content.caprigenus_background_color }});">
-				<span><koken:img class="{{ content.file_type }}" lazy="true" fade="300" /></span>
+			<div data-id="{{ index }}" class="pillar-item anchor" style="background-color:rgb({{ content.caprigenus_background_color }});">
+				<koken:img class="{{ content.file_type }}" lazy="true" fade="300" />
 			</div>
 		</koken:loop>
 	</section>
 	<section id="slideshow">
 		<!-- http://help.koken.me/customer/portal/questions/8421760--allow-swiping-forces-splash-screen-pulse-transition-to-slide-regardless-of-transition-selection -->
 		<koken:pulse autostart="false" jsvar="pulse_slideshow" width="100%", height="100%", speed="6", transition_type="Fade", transition_duration="2000", loop="true", next="#next", previous="#previous", toggle="#toggle", fullscreen="#full", swipe="false" />
-		<div class="slideshow-navigation left">
-			<span>
-				<a href="#" data-bind-to-key="left" id="previous" class="slideshow-button"><i class="icon-circle-left"></i></a>
-			</span>
+		<div class="slideshow-navigation middle">
+			<div class="icon"><a href="#" data-bind-to-key="left" id="previous" class="slideshow-button"><i class="icon-cheveron-left"></i></a></div>
+			<div class="icon"><a href="#" data-bind-to-key="right" id="next" class="slideshow-button"><i class="icon-cheveron-right"></i></a></div>
 		</div>
-		<div class="slideshow-navigation center">
-			<a href="#" data-bind-to-key="backspace" id="quit" class="slideshow-button"><i class="icon-cancel-circle"></i></a>
-			<a href="#" data-bind-to-key="space" id="toggle" class="slideshow-button"><i class="icon-play2"></i></a>
-			<a href="#" id="download" class="slideshow-button"><i class="icon-download2"></i></a>
-		</div>
-		<div class="slideshow-navigation right">
-			<span>
-				<a href="#" data-bind-to-key="right" id="next" class="slideshow-button"><i class="icon-circle-right"></i></a>
-			</span>
+		<div class="slideshow-navigation down">
+			<div class="icon"><a href="#" data-bind-to-key="backspace" id="quit" class="slideshow-button"><i class="icon-close"></i></a></div>
+			<div class="icon"><a href="#" data-bind-to-key="space" id="toggle" class="slideshow-button"><i class="icon-play"></i></a></div>
+			<div class="icon"><a href="#" id="download" class="slideshow-button"><i class="icon-download"></i></a></div>
 		</div>
 		<audio id="music" volume="0.4"></audio>
 	</section>

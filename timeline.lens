@@ -107,5 +107,5 @@
 			No timeline data found.
 		</koken:note>
 	</koken:load>
-	<i id="infinite_load_msg" class="icon-hour-glass"></i>
+	<div class="icon" id="infinite_load_msg"><i class="icon-spinner3"></i></div>
 <koken:include file="footer.incl" />

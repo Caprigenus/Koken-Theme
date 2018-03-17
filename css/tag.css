@@ -1,4 +1,9 @@
-.content-description {
+.head-tags {
+	padding: 10px;
+	margin-top: 10px;
+}
+
+.tags {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -7,54 +12,20 @@
 
 .tag {
 	display: inline-block;
-	margin: 0 0 .25em 1em;
-}
-
-.tag a {
-	position: relative;
-	display: inline-block;
-	height: 2em;
-	line-height: 2em;
-	padding: 0 1em 0 0.5em;
 	background-color: #eee;
-	color: #222;
-	font-size: 0.75em;
+	padding: 0.2em;
 }
 
-.tag a::before {
-	position: absolute;
-	top: 0;
-	left: -12px;
-	content: '';
-	width: 0;
-	height: 0;
-	border-color: transparent #eee transparent transparent;
-	border-style: solid;
-	border-width: 12px 12px 12px 0;
+.tag i {
+	font-size: 1em;
+	color: #ccc;
+	margin-right: 0.25em;
 }
 
-.tag a:hover {
-	background-color: #222;
-	color: #eee;
-}
-
-.tag a:hover::before {
-	border-color: transparent #222 transparent transparent;
-	color: #eee;
-}
-
-.tag a.k-nav-current {
-	background-color: #ccc;
+.tag a.k-nav-current i:before {
 	color: #222;
 }
 
-.tag a.k-nav-current::before {
-	border-color: transparent #ccc transparent transparent;
-	background-color: transparent;
-}
-
-.head-tags {
-	padding: 10px;
-	margin-top: 10px;
-	background-color: #ccc;
+.tag:hover i:before {
+	color: #222;
 }

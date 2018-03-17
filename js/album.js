@@ -33,7 +33,7 @@ $(function() {
 			});
 		});
 
-		$('.cover-content h1').width("100%").boxfit({
+		$('.cover-content h1').boxfit({
 			maximum_font_size: $('.cover-content h1').height()
 		});
 
@@ -125,7 +125,7 @@ $(function() {
 		pulse_slideshow.on('playing', function(e) {
 			var toggle = $('#toggle i');
 			if (e) {
-				toggle.removeClass('icon-play2').addClass('icon-pause');					
+				toggle.removeClass('icon-play').addClass('icon-pause3');					
 				if (music.attr('src') !== '' && music.attr('src') !== undefined) {
 					music.trigger('play');
 				}

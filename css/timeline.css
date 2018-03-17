@@ -45,17 +45,9 @@ ol.list li:first-of-type {
 
 #infinite_load_msg {
 	display: none;
-	background-color: #222;
-	color: #eee;
-	width: 3em;
-	height: 3em;
-	border-radius: 1.5em;
 	bottom: 0.5em;
 	left: calc(50% - 1.5em);
-	font-size: 2em;
 	position: fixed;
-	text-align: center;
-	line-height: 3em;
 	-moz-transition:  all 0.3s ease-in-out;
 	-webkit-transition: all 0.3s ease-in-out;
 	-ms-transition:  all 0.3s ease-in-out;

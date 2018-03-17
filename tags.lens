@@ -3,7 +3,7 @@
 	<ol class="head-tags">
 		<koken:loop>
 			<koken:if condition="{{ tag.counts.total }} > 3">
-				<li class="tag"><koken:link title="Alle Bilder in {{ tag.title case='title' }}">{{ tag.title case="title" }}</koken:link></li>
+				<koken:link title="Alle Bilder in {{ tag.title case='title' }}"><li class="tag"><i class="icon-price-tag"></i>{{ tag.title case="title" }}</li></koken:link>
 			</koken:if>
 		</koken:loop>
 	</ol>
