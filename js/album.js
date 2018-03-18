@@ -125,13 +125,13 @@ $(function() {
 		pulse_slideshow.on('playing', function(e) {
 			var toggle = $('#toggle i');
 			if (e) {
-				toggle.removeClass('icon-play').addClass('icon-pause3');					
+				toggle.removeClass('icon-play-circle').addClass('icon-pause-circle');					
 				if (music.attr('src') !== '' && music.attr('src') !== undefined) {
 					music.trigger('play');
 				}
 			} else {
 				music.trigger('pause');
-				toggle.removeClass('icon-pause').addClass('icon-play2');				
+				toggle.removeClass('icon-pause-circle').addClass('icon-play-circle');				
 			}
 		});
 	}

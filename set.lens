@@ -1,7 +1,7 @@
 <koken:include file="header.incl" />
 <koken:load>
 	<div class="cover-margin">
-		<koken:background lazy="true" id="cover"></koken:background>
+		<koken:background lazy="true" id="cover" style="background:rgb({{ album.covers.first.caprigenus_background_color }});"></koken:background>
 	</div>
 	<section id="pillar">
 		<koken:loop>

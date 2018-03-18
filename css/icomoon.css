@@ -1,70 +1,49 @@
-/*
-	https://icomoon.io/app/
-*/
-
 @font-face {
-    font-family: 'icomoon';
-	src: url('../fonts/icomoon.ttf?730sxs') format('truetype'), url('../fonts/icomoon.woff?730sxs') format('woff'), url('../fonts/icomoon.svg?730sxs#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'icomoon';
+	src: url('../fonts/icomoon.ttf?shqnlc') format('truetype'), url('../fonts/icomoon.woff?shqnlc') format('woff'), url('../fonts/icomoon.svg?shqnlc#icomoon') format('svg');
 }
 
 i {
-    font-family: 'icomoon';
+	font-family: 'icomoon';
+	font-size: 3em;
 }
 
-i:before {
-	position: relative;
+.icon-tags2:before {
+	content: "\e912";
 }
 
-.icon-price-tag:before {
-	content: "\e935";
-}
-
-.icon-spinner3:before {
-	content: "\e97c";
-}
-
-.icon-cheveron-down:before {
+.icon-stop-watch:before {
 	content: "\e900";
-	top: 0.05em;
 }
 
-.icon-cheveron-left:before {
-	content: "\e901";
-	left: -0.05em;
+.icon-times-circle:before {
+	content: "\f057";
 }
 
-.icon-cheveron-right:before {
-	content: "\e902";
-	left: 0.05em;
+.icon-cloud-download:before {
+	content: "\f0ed";
 }
 
-.icon-cheveron-up:before {
-	content: "\e903";
+.icon-chevron-circle-left:before {
+	content: "\f137";
 }
 
-.icon-close:before {
-	content: "\e904";
-	font-size: 0.6em;
-	top: -0.3em;
+.icon-chevron-circle-right:before {
+	content: "\f138";
 }
 
-.icon-download:before {
-	content: "\e905";
-	font-size: 0.55em;
-	top: -0.4em;
+.icon-chevron-circle-up:before {
+	content: "\f139";
 }
 
-.icon-pause3:before {
-	content: "\e907";
-	font-size: 0.75em;
-	top: -0.125em;
+.icon-chevron-circle-down:before {
+	content: "\f13a";
 }
 
-.icon-play:before {
-	content: "\e908";
-	font-size: 0.75em;
-	top: -0.125em;
-	left: 0.05em;
+.icon-play-circle:before {
+	content: "\f144";
+}
+
+.icon-pause-circle:before {
+	content: "\f28b";
 }

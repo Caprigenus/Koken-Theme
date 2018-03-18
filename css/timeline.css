@@ -23,16 +23,25 @@ ol.list li:first-of-type {
 	margin: 1em;
 }
 
+.timeline-img {
+	display: flex;
+	justify-content: space-between;
+}
+
+.timeline-img:nth-of-type(2) {
+	margin-top: 2px;
+}
+
 .timeline-img-one {
-	width: 60%;
+	width: 67%;
 }
 
 .timeline-img-two {
-	width: 47.6%;
+	width: 49.7%;
 }
 
 .timeline-img-three {
-	width: 31%;
+	width: 33%;
 }
 
 .cover-images {

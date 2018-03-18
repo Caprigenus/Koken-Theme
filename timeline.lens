@@ -26,7 +26,7 @@
 										<p>{{ album.published_on date_format="j.n.Y" }}</p>
 										<h3 class="timeline-title">{{ album.title }}</h3>
 										<koken:covers minimum="3" limit="3">
-											<div>
+											<div class="timeline-img">
 												<koken:loop>
 													<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
 												</koken:loop>
@@ -42,32 +42,43 @@
 										<p>{{ album.published_on date_format="j.n.Y" }}</p>
 										<h3 class="timeline-title">{{ content.length }} neue Bilder in {{ album.title }}</h3>
 										<koken:if condition="{{ content.length }} == 1">
-											<koken:loop>
-												<koken:img class="timeline-img-one" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
-											</koken:loop>
+											<div class="timeline-img">
+												<koken:loop>
+													<koken:img class="timeline-img-one" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
+												</koken:loop>
+											</div>
 										<koken:else>
 											<koken:if condition="{{ content.length }} == 2">
-												<koken:loop limit="2">
-													<koken:img class="timeline-img-two" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
-												</koken:loop>
+												<div class="timeline-img">
+													<koken:loop limit="2">
+														<koken:img class="timeline-img-two" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
+													</koken:loop>
+												</div>
 											<koken:else>
 												<koken:if condition="{{ content.length }} <= 3">
-													<koken:loop limit="3">
-														<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
-													</koken:loop>
-												<koken:else>
-													<koken:if condition="{{ content.length }} <= 5">
-														<koken:loop limit="5">
-															<koken:if condition="{{ index }} < 3">													
-																<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
-															<koken:else>
-																<koken:img class="timeline-img-two" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
-															</koken:if>
-														</koken:loop>
-													<koken:else>
-														<koken:loop limit="6">
+													<div class="timeline-img">
+														<koken:loop limit="3">
 															<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
 														</koken:loop>
+													</div>
+												<koken:else>
+													<koken:if condition="{{ content.length }} <= 5">
+														<div class="timeline-img">
+															<koken:loop limit="5">
+																<koken:if condition="{{ index }} == 3"></div><div class="timeline-img"></koken:if>
+																<koken:if condition="{{ index }} < 3">													
+																	<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
+																<koken:else>
+																	<koken:img class="timeline-img-two" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="3:2" />
+																</koken:if>
+															</koken:loop>
+														</div>
+													<koken:else>
+														<div class="timeline-img">
+															<koken:loop limit="6">
+																<koken:img class="timeline-img-three" style="background-color:rgb({{ content.caprigenus_background_color }});" crop="true" size="1:1" />
+															</koken:loop>
+														</div>
 													</koken:if>
 												</koken:if>
 											</koken:if>
@@ -107,5 +118,5 @@
 			No timeline data found.
 		</koken:note>
 	</koken:load>
-	<div class="icon" id="infinite_load_msg"><i class="icon-spinner3"></i></div>
+	<div class="icon" id="infinite_load_msg"><i class="icon-stop-watch"></i></div>
 <koken:include file="footer.incl" />
