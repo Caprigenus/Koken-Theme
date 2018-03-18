@@ -21,9 +21,5 @@ $(function() {
 				balanceColumns: true
 			});
 		});
-
-		$('.cover-content h1').width("100%").boxfit({
-			maximum_font_size: $('.cover-content h1').height()
-		});
 	}
 });

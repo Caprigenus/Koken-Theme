@@ -3,14 +3,12 @@
 	<koken:if condition="({{album.id}} != 195)&&({{album.id}} != 208)">
 		<div class="cover-margin" style="background:rgb({{ album.covers.first.caprigenus_background_color }});">
 			<koken:background lazy="true" id="cover">
-				<div class="cover-content" style="background: -webkit-linear-gradient(top, rgba({{ album.covers.first.caprigenus_background_color }}, 0), rgba({{ album.covers.first.caprigenus_background_color }},0.34));">
-					<div class="cover-content-margin">
-						<div class="cover-h1"><h1 style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});text-shadow:rgb({{ album.covers.first.caprigenus_background_color }}) 0 0 8px;">{{ album.title }}</h1></div>
-						<div class="buttons">
-						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});color:rgb({{ album.covers.first.caprigenus_background_color }});"><a id="scroll-down" href="#pillar"><i class="icon-cheveron-down"></i></a></div>
-						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});color:rgb({{ album.covers.first.caprigenus_background_color }});"><a id="play" href="#" data-bind-to-key="space"><i class="icon-play"></i></a></div>
-						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});color:rgb({{ album.covers.first.caprigenus_background_color }});"><koken:album_download><koken:link><i class="icon-download"></i></koken:link></koken:album_download></div>
-						</div>
+				<div class="cover-content" style="background: -webkit-linear-gradient(top, rgba({{ album.covers.first.caprigenus_background_color }}, 0), rgba({{ album.covers.first.caprigenus_background_color }},0.34));color:rgb({{ album.covers.first.caprigenus_background_color }});">
+					<h1 style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});text-shadow:rgb({{ album.covers.first.caprigenus_background_color }}) 0 0 8px;">{{ album.title }}</h1>
+					<div class="buttons">
+						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});"><a id="scroll-down" href="#pillar"><i class="icon-cheveron-down"></i></a></div>
+						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});"><a id="play" href="#" data-bind-to-key="space"><i class="icon-play"></i></a></div>
+						<div class="icon" style="background-color:rgb({{ album.covers.first.caprigenus_foreground_color }});"><koken:album_download><koken:link><i class="icon-download"></i></koken:link></koken:album_download></div>
 					</div>
 				</div>
 			</koken:background>

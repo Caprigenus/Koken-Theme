@@ -126,24 +126,16 @@ a.k-nav-current:before {
 	width: 100%;
 }
 
-.cover-content-margin {
-	margin: 0 1em 1em;
-	position: relative;
-}
-
-.cover-h1 {
-	width: 100%;
-	position: relative;
-}
-
 .cover-content h1 {
-	}
+	width: 67%;
+	margin: 0 auto;
+}
 
 .buttons {
 	display: flex;
 	justify-content: space-between;
 	max-width: 250px;
-	margin: 0 auto;
+	margin: 0.5em auto 2em;
 }
 
 .icon {
