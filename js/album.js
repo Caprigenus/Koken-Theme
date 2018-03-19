@@ -5,13 +5,12 @@ $(function() {
 			body = $("body"),
 			slideshowNavigation = $(".slideshow-navigation"),
 			slideshow = $("#slideshow"),
-			cover = $("#cover"),
 			music = $("audio");
 
 		$(window).keydown(function(e) {
 			if (e.keyCode == 40) {
 				$('a#scroll-down').click();
-			};
+			}
 		});
 
 		/* Order Images in Columns */
@@ -42,7 +41,7 @@ $(function() {
 		*/
 
 		/* Assign Background Music */
-		pulse_slideshow.on('dataloaded', function(e) {
+		pulse_slideshow.on('dataloaded', function() {
 			music.attr("src", $(location).attr("href").replace("albums", "storage/music").replace(/(\/#|\/)$/, ".mp3"));
 		});
 
@@ -89,7 +88,7 @@ $(function() {
 		});
 
 		// Hide and show Navigation bar
-		slideshow.on("touchstart", function(e) {
+		slideshow.on("touchstart", function() {
 			clearTimeout(t);
 			slideshowNavigation.addClass("show");
 			body.removeClass("play");
@@ -101,7 +100,7 @@ $(function() {
 		});
 
 		// Hide and show slideshow menu bar after mousemove
-		pulse_slideshow.on('contentmousemove', function(e) {
+		pulse_slideshow.on('contentmousemove', function() {
 			// hack to ignore single occurrence of mousemove
 			if (++s < 2) {
 				t = setTimeout(function() {

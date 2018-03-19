@@ -131,6 +131,11 @@ a.k-nav-current:before {
 	margin: 0 auto;
 }
 
+.album-text p {
+	font-size: 18px;
+	line-height: 1.5em;
+}
+
 .buttons {
 	display: flex;
 	justify-content: space-between;
@@ -194,21 +199,25 @@ a.k-nav-current:before {
 /* iPhone 6,7,8 in landscape */
 @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) {
 	body {
-		width: 736px;
+		
 	}
 }
 
 /* iPhone 6,7,8 in portrait */
 @media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait) {
 	body {
-		width: 414px;
+		
 	}
 }
 
 /* iPad in landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2) {
 	nav {
-		font-size: 21px;
+		font-size: 20px;
+	}
+
+	.album-text p {
+		font-size: 1.2em;
 	}
 
 	#cover {
@@ -243,6 +252,7 @@ a.k-nav-current:before {
 	display: none;
 	transition: all 0.4s ease-in-out;
 	position: relative;
+	overflow: hidden;
 }
 
 .album-text {
@@ -256,12 +266,16 @@ a.k-nav-current:before {
 
 .created {
 	position: absolute;
-	top: 0;
-	right: 0;
-	padding: 0 0 0.25em 0.5em;
+	top: -1em;
+	right: -1em;
 	transition: none !important;
 	z-index: 10;
 	background-color: #eee;
-	color: #222;
-	font-size: 0.85em;
+	color: #aaa;
+	font-weight: 400;
+	transform: rotate(45deg);
+	transform-origin: center bottom;
+	border-left: 1.25em solid transparent;
+	border-top: 2em solid transparent;
+	border-right: 1.25em solid transparent;
 }

@@ -4,7 +4,7 @@ $(function() {
 		$(window).keydown(function(e) {
 			if (e.keyCode == 40) {
 				$('a#scroll-down').click();
-			};
+			}
 		});
 
 		$(function() {
