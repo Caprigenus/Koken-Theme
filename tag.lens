@@ -5,7 +5,9 @@
 			<koken:event>
 				<koken:event_content>
 					<div data-id="{{ content.id }}" class="pillar-item small-border relative">
-						<p class="created">{{ content.captured_on date_format="j.n.Y" }}</p>
+						<div class="center">
+							<p class="created">{{ content.captured_on date_format="j.n.Y" }}</p>
+						</div>
 						<koken:img class="{{ content.file_type }}" style="background-color:rgb({{ content.caprigenus_background_color }});" lazy="true" fade="300" />
 						<ol class="tags">
 							<koken:tags>

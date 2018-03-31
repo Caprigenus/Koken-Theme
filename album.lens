@@ -2,13 +2,15 @@
 <koken:load>
 	<koken:if condition="({{album.id}} != 195)&&({{album.id}} != 208)">
 		<div class="cover-margin">
-			<koken:background lazy="true" id="cover" style="background:rgb({{ album.covers.first.caprigenus_background_color }});">
-				<div class="cover-content" style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});text-shadow:rgb({{ album.covers.first.caprigenus_background_color }}) 0 0 8px;background: -webkit-linear-gradient(top, rgba({{ album.covers.first.caprigenus_background_color }}, 0), rgba({{ album.covers.first.caprigenus_background_color }},0.34));">
+			<!--<div id="cover" style="background:rgb({{ album.covers.first.caprigenus_background_color }});">-->
+			<koken:background lazy="true" id="cover" style="background:rgb({{ album.covers.first.caprigenus_background_color }})">
+				<div class="cover-content" style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});text-shadow:rgb({{ album.covers.first.caprigenus_background_color }}) 0 0 8px;background: -webkit-linear-gradient(top, rgba({{ album.covers.first.caprigenus_background_color }}, 0.34), rgba({{ album.covers.first.caprigenus_background_color }}, 0) 25%, rgba({{ album.covers.first.caprigenus_background_color }}, 0) 80%, rgba({{ album.covers.first.caprigenus_background_color }},0.34));">
 					<h1>{{ album.title }}</h1>
 					<div class="buttons">
-						<a id="scroll-down" href="#pillar"><i class="icon-chevron-circle-down"></i></a>
-						<a id="play" href="#" data-bind-to-key="space"><i class="icon-play-circle"></i></a>
-						<koken:album_download><koken:link><i class="icon-cloud-download"></i></koken:link></koken:album_download>
+						<koken:parent><koken:link title="{{ album.title }}"><i class="icon-chevron-circle-left"></i></koken:link></koken:parent>
+						<a id="scroll-down" href="#pillar" title="Zu den Bildern"><i class="icon-chevron-circle-down"></i></a>
+						<a id="play" href="#" data-bind-to-key="space" title="Slideshow"><i class="icon-play-circle"></i></a>
+						<koken:album_download><koken:link title="Download"><i class="icon-cloud-download"></i></koken:link></koken:album_download>
 					</div>
 				</div>
 			</koken:background>

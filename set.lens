@@ -7,9 +7,11 @@
 		<koken:loop>
 			<div class="pillar-item" style="color:rgb({{ album.covers.first.caprigenus_foreground_color }});background-color:rgb({{ album.covers.first.caprigenus_background_color }});">
 				<koken:link>
-					<p class="created">{{ album.published_on date_format="j.n.Y" }}</p>
 					<koken:img lazy="true" />
 					<div class="album-text">
+						<div class="center">
+							<p class="created">{{ album.published_on date_format="j.n.Y" }}</p>
+						</div>
 						<h3>{{ album.title }}</h3>
 						<p>{{ album.summary }}</p>
 					</div>

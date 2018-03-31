@@ -114,6 +114,7 @@ a.k-nav-current:before {
 #cover {
 	width: 100%;
 	height: 592px;
+	position: relative;
 }
 
 .cover-margin {
@@ -122,17 +123,21 @@ a.k-nav-current:before {
 
 .cover-content {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
 }
 
 .cover-content h1 {
 	width: 67%;
-	margin: 0 auto;
+	margin: 2rem auto 0;
 }
 
 .album-text p {
-	font-size: 18px;
+	font-size: 15px;
 	line-height: 1.5em;
 }
 
@@ -140,7 +145,11 @@ a.k-nav-current:before {
 	display: flex;
 	justify-content: space-between;
 	max-width: 250px;
-	margin: 0.5em auto 2em;
+	margin: 0.5em auto 2rem;
+}
+
+.buttons a {
+	margin: 1em;
 }
 
 /* Responsive */
@@ -258,24 +267,45 @@ a.k-nav-current:before {
 .album-text {
 	padding: 3em;
 	line-height: 1.5em;
+	position: relative;
 }
 
 .album-text h3 {
 	padding-bottom: 0.5em;
 }
 
-.created {
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: start;
 	position: absolute;
-	top: -1em;
-	right: -1em;
+	width: 3em;
+	left: 0;
+	top: 3em;
+}
+
+.created {
+/*	position: absolute;
+	top: -1.5em;
+	right: -3em;
+	width: 4em;
+	height: 4em;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-items: center;*/
 	transition: none !important;
 	z-index: 10;
-	background-color: #eee;
+/*	background-color: #eee;
 	color: #aaa;
 	font-weight: 400;
 	transform: rotate(45deg);
-	transform-origin: center bottom;
-	border-left: 1.25em solid transparent;
-	border-top: 2em solid transparent;
-	border-right: 1.25em solid transparent;
+	border-left: 1.5em solid transparent;
+	border-right: 1.5em solid transparent;*/
+	transform: rotate(270deg);
+}
+
+.k-source-tag .created {
+	text-shadow: #eee 0 0 8px;
+	font-weight: 400;
 }
